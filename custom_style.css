@@ -1,8 +1,54 @@
 
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
+    /* 设置全局页面样式 */
+    @page {
+        /* 纸张大小设置为 A4 */
+        size: A4; 
+        
+        /* 关键：将所有边距设置为 0 */
+        margin: 0; 
+        
+        /* 设置页面的默认边距 */
+        /* margin: 2cm;  */
+        /* @top-left { content: none; }
+        @top-center { content: none; }
+        @top-right { content: none; }
+        @bottom-left { content: none; }
+        @bottom-center { content: none; }
+        @bottom-right { content: none; }
+        */
+        
+        /* 默认不显示背景（WeasyPrint默认行为） */
+        /* background-image: none !important; */
+        
+        /* 您可以在这里定义页眉和页脚的区域 */
+        @top-center {
+            content: "我的报告标题";
+            font-size: 10pt;
+        }
+        @bottom-right {
+            /* 显示页码 */
+            content: "Page " counter(page) " of " counter(pages);
+            font-size: 9pt;
+        }
     }
+
+    html {
+        /* 确保 html 和 body 元素充满整个视口/页面 */
+        width: 100%;
+        /* 移除可能存在的 margin/padding 干扰 */
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        background-image: url('cover-bg.png');
+    
+        /* 关键：确保图片完全覆盖元素，可能会被裁剪 */
+        background-size: auto; 
+        
+        /* 确保背景图片从左上角开始，不会平铺 */
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
     body {
       margin: 0 auto;
       max-width: 36em;
@@ -15,6 +61,7 @@
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
+
     @media (max-width: 600px) {
       body {
         font-size: 0.9em;
@@ -25,9 +72,10 @@
         color: red;
       }
     }
+
     @media print {
       html {
-        background-color: rgb(240, 239, 229);
+        background-color: transparent;
       }
       body {
         background-color: transparent;
@@ -131,7 +179,8 @@
     }
     header {
       margin-bottom: 4em;
-      text-align: center;
+      text-align: right;
+      page-break-after: always;
     }
     #TOC li {
       list-style: none;
