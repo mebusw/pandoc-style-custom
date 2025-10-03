@@ -4,22 +4,19 @@
         /* 纸张大小设置为 A4 */
         size: A4; 
         
-        /* 关键：将所有边距设置为 0 */
-        margin: 0; 
-        
-        /* 设置页面的默认边距 */
-        /* margin: 2cm;  */
-        /* @top-left { content: none; }
-        @top-center { content: none; }
-        @top-right { content: none; }
-        @bottom-left { content: none; }
-        @bottom-center { content: none; }
-        @bottom-right { content: none; }
-        */
-        
-        /* 默认不显示背景（WeasyPrint默认行为） */
-        /* background-image: none !important; */
-        
+        background-color: transparent;
+        background-image: url('cover-bg.png');    
+        background-size: auto; 
+        background-repeat: no-repeat;
+        background-position: center center;
+        -weasyprint-print-backgrounds: yes; 
+
+        /* 关键：为正文内容设置边距，例如 2.5cm */
+        margin-top: 1.5cm;
+        margin-bottom: 1cm;
+        margin-left: 0.7cm;
+        margin-right: 0.7cm;
+                
         /* 您可以在这里定义页眉和页脚的区域 */
         @top-center {
             /* content: "我的报告标题"; */
@@ -29,15 +26,24 @@
             /* 显示页码 */
             content: "Page " counter(page) " of " counter(pages);
             font-size: 9pt;
-            /* 关键设置：让内容从右边和底边向内缩进 2cm */
-            padding-right: 2cm;
-            padding-bottom: 2cm;
+            /* 关键设置：让内容从右边和底边向内缩进*/
+            /* padding-right: 1cm;
+            padding-bottom: 1cm; */
             
             /* 确保页码在最右下角显示 */
             text-align: right; 
             vertical-align: bottom;
         }
     }
+    @page :first {
+        /* 首页边距设置为 0，使封面内容紧贴边缘 */
+        margin: 0; 
+        
+        /* 封面通常不需要页码或页眉页脚 */
+        @bottom-right { content: none; }
+        @top-center { content: none; }
+    }
+
 
     html {
         /* 确保 html 和 body 元素充满整个视口/页面 */
@@ -45,15 +51,7 @@
         /* 移除可能存在的 margin/padding 干扰 */
         margin: 0;
         padding: 0;
-        background-color: transparent;
-        background-image: url('cover-bg.png');
-    
-        /* 关键：确保图片完全覆盖元素，可能会被裁剪 */
-        background-size: auto; 
-        
-        /* 确保背景图片从左上角开始，不会平铺 */
-        background-repeat: no-repeat;
-        background-position: center center;
+
     }
 
     body {
@@ -107,6 +105,7 @@
     }
     img {
       max-width: 100%;
+      page-break-after: avoid;
     }
     svg {
       height: auto;
@@ -173,8 +172,11 @@
       overflow-x: auto;
       display: block;
       font-variant-numeric: lining-nums tabular-nums;
+      page-break-after: avoid;
+
     }
     table caption {
+      margin-top: 0.75em;
       margin-bottom: 0.75em;
     }
     tbody {
@@ -252,8 +254,6 @@
     }
     #main-content {
       background-color: #fff;
-      margin-top: 50px;
-      margin-bottom: 50px;
       min-height: 26cm;
       padding: 1cm;
     }
