@@ -22,13 +22,20 @@
         
         /* 您可以在这里定义页眉和页脚的区域 */
         @top-center {
-            content: "我的报告标题";
+            /* content: "我的报告标题"; */
             font-size: 10pt;
         }
         @bottom-right {
             /* 显示页码 */
             content: "Page " counter(page) " of " counter(pages);
             font-size: 9pt;
+            /* 关键设置：让内容从右边和底边向内缩进 2cm */
+            padding-right: 2cm;
+            padding-bottom: 2cm;
+            
+            /* 确保页码在最右下角显示 */
+            text-align: right; 
+            vertical-align: bottom;
         }
     }
 
@@ -50,8 +57,8 @@
     }
 
     body {
+      background-color: transparent;
       margin: 0 auto;
-      max-width: 36em;
       padding-left: 50px;
       padding-right: 50px;
       padding-top: 50px;
@@ -69,7 +76,6 @@
       }
       h1 {
         font-size: 1.8em;
-        color: red;
       }
     }
 
@@ -78,7 +84,6 @@
         background-color: transparent;
       }
       body {
-        background-color: transparent;
         color: black;
         font-size: 12pt;
       }
@@ -90,6 +95,7 @@
         page-break-after: avoid;
       }
     }
+
     p {
       margin: 1em 0;
     }
@@ -108,6 +114,12 @@
     }
     h1, h2, h3, h4, h5, h6 {
       margin-top: 1.4em;
+    }
+    h1 {
+      color: red;
+    }
+    h2 {
+      color: green;
     }
     h5, h6 {
       font-size: 1em;
@@ -209,7 +221,54 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-    /* CSS for syntax highlighting */
+
+    /* start of Custom styles for title page */
+    .title {
+      position: absolute;
+      top: 12cm;
+      right: 2cm;
+      font-size: 2.2cm;
+      font-family: heiti;
+      color: black;
+    }
+    .subtitle {
+      position: absolute;
+      top: 18cm;
+      right: 2cm;
+      font-size: 1.6cm;
+      font-family: heiti;
+      color: black;
+    }
+    .date {
+      position: absolute;
+      top: 22cm;
+      right: 2cm;
+      font-size: 0.8cm;
+      font-family: heiti;
+    }
+    #title-block-header {
+      margin-bottom: 0;
+      page-break-after: always;
+    }
+    #main-content {
+      background-color: #fff;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      min-height: 26cm;
+      padding: 1cm;
+    }
+    #closing-block-footer {
+      margin-top: 50px;
+      page-break-before: always;
+    }
+    #closing-title {
+      font-size: 1.5cm;
+      font-family: heiti;
+      margin: 0 auto;
+    }
+
+    /* end of Custom styles for title page */
+
     html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
