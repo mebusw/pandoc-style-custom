@@ -65,6 +65,7 @@
       overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
+      font-family: "Microsoft YaHei", "STSong", "Songti", "STKaiti", "KaiTi",  Arial, sans-serif;
     }
 
     @media (max-width: 600px) {
@@ -116,9 +117,11 @@
     }
     h1 {
       color: red;
+      font-weight: bold;
     }
     h2 {
       color: green;
+      font-weight: bold;
     }
     h5, h6 {
       font-size: 1em;
@@ -187,6 +190,8 @@
     th {
       border-top: 1px solid #1a1a1a;
       padding: 0.25em 0.5em 0.25em 0.5em;
+      background-color: darkgoldenrod;
+      color: #fff;
     }
     td {
       padding: 0.125em 0.5em 0.25em 0.5em;
@@ -230,7 +235,7 @@
       top: 12cm;
       right: 2cm;
       font-size: 2.2cm;
-      font-family: heiti;
+      font-family: "Microsoft YaHei";
       color: black;
     }
     .subtitle {
@@ -238,7 +243,15 @@
       top: 18cm;
       right: 2cm;
       font-size: 1.6cm;
-      font-family: heiti;
+      font-family: "Songti", "STSong", serif;
+      color: black;
+    }
+    .author {
+      position: absolute;
+      top: 21cm;
+      right: 2cm;
+      font-size: 0.8cm;
+      font-family: "Songti", "STSong", serif;
       color: black;
     }
     .date {
@@ -246,7 +259,7 @@
       top: 22cm;
       right: 2cm;
       font-size: 0.8cm;
-      font-family: heiti;
+      font-family: "Songti", "STSong", serif;
     }
     #title-block-header {
       margin-bottom: 0;
@@ -263,7 +276,7 @@
     }
     #closing-title {
       font-size: 1.5cm;
-      font-family: heiti;
+      font-family: kaiti;
       margin: 0 auto;
     }
 
