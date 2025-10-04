@@ -43,3 +43,5 @@ print("Hello, Pandoc!")
   - 静安
 - 天津
 - 北京
+
+![](output.png)

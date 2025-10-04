@@ -1,4 +1,11 @@
-output.docx
-output.html
-output.pdf
+output/
+output.*
 
+node_modules/
+.DS_Store
+.vscode/
+*.log
+*.aux
+*.out
+*.toc
+*.gz
