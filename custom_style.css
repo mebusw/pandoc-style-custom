@@ -14,9 +14,9 @@
         /* 关键：为正文内容设置边距，例如 2.5cm */
         margin-top: 1.5cm;
         margin-bottom: 1cm;
-        margin-left: 0.7cm;
-        margin-right: 0.7cm;
-                
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
+
         /* 您可以在这里定义页眉和页脚的区域 */
         @top-center {
             /* content: "我的报告标题"; */
@@ -92,6 +92,9 @@
       }
       h2, h3, h4 {
         page-break-after: avoid;
+        margin-top: 1.5cm !important; 
+        /* 避免边距折叠导致的问题，也可以考虑添加一点点 padding */
+        padding-top: 0.1px; 
       }
     }
 
@@ -113,13 +116,21 @@
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
+      margin-top: 1cm;
     }
     h1 {
       color: rgb(2, 31, 73);
       font-weight: bold;
     }
     h2 {
+      color: rgb(10, 1, 84);
+      font-weight: bold;
+    }
+    h3 {
+      color: rgb(10, 1, 84);
+      font-weight: bold;
+    }
+    h4 {
       color: rgb(10, 1, 84);
       font-weight: bold;
     }
@@ -264,11 +275,12 @@
     #title-block-header {
       margin-bottom: 0;
       page-break-after: always;
+      page-
     }
     #main-content {
       background-color: #fff;
       min-height: 26cm;
-      padding: 1cm;
+      padding: 2cm;
     }
     #closing-block-footer {
       margin-top: 50px;
