@@ -8,6 +8,9 @@
 #   --pdf-engine=wkhtmltopdf
 
 ## 方式二：先生成 HTML，再用 weasyprint 转 PDF
+mkdir -p output
+python mermaid_converter.py
+
 cd output
 pandoc README_with_images.md -o output.html \
   --css=../custom_style.css \
