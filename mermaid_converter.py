@@ -25,7 +25,7 @@ def render_mermaid_to_png(mermaid_code: str, output_path: str) -> Optional[str]:
         成功时返回图片链接路径，失败时返回 None。
     """
     try:
-        render = md.Mermaid(mermaid_code)
+        render = md.Mermaid(mermaid_code,width=1024, scale=2)
         
         # 使用 to_png() 方法获取字节数据
         png_bytes = render.to_png(output_path)

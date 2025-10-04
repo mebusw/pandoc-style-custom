@@ -164,6 +164,28 @@ radar-beta
 
 
 ```mermaid
+---
+config:
+  radar:
+    axisScaleFactor: 0.25
+    curveTension: 0.1
+  theme: base
+  themeVariables:
+    cScale0: "#FF0000"
+    cScale1: "#00FF00"
+    cScale2: "#0000FF"
+    radar:
+      curveOpacity: 0
+---
+radar-beta
+  axis a["接班意愿与愿景"],b["能力认知与准备"],c["家庭沟通与关系"],d["企业融入与挑战"],e["支持系统与资源"],f["未来规划与信心"]
+  curve c1{1,2,3,4,5,3}
+  curve c2{5,4,3,2,1,2}
+  curve c3{3,3,3,3,3,3}
+```
+
+
+```mermaid
 flowchart TD
  subgraph s1["Untitled subgraph"]
         n3["Untitled Node"]
