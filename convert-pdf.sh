@@ -8,7 +8,7 @@
 #   --pdf-engine=wkhtmltopdf
 
 ## 方式二：先生成 HTML，再用 weasyprint 转 PDF
-pandoc README.md -o output.html \
+pandoc README_with_images.md -o output.html \
   --css=./custom_style.css \
   --template=custom_template.html 
 echo "生成完成：output.html"

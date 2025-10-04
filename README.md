@@ -44,4 +44,34 @@ print("Hello, Pandoc!")
 - 天津
 - 北京
 
-![](output.png)
+## 图表
+```mermaid
+graph TD
+    A[开始] --> B{判断};
+    B -- 是 --> C[执行操作 1];
+    B -- 否 --> D[执行操作 2];
+    C --> E[结束];
+    D --> E;
+```
+
+```mermaid
+flowchart TD
+ subgraph s1["Untitled subgraph"]
+        n3["Untitled Node"]
+  end
+    A["引言: 改写题目, 介绍图表和表格信息"] --> B("总体概述: 全球水用趋势和两国用水差异")
+    B --> C("主体段落1: 柱状图细节描述") & D("主体段落2: 表格细节描述")
+    C --> C1("农业用水的主导地位和趋势") & C2("工业和家庭用水的增长") & C3("引用关键数据支持")
+    D --> D1("巴西和刚果的水用对比") & D2("各部门用水比例及人均用水量") & D3("引用关键数据进行比较")
+    n1["Sample Label"] --> n2["Untitled Node"]
+    n1@{ icon: "mc:default", pos: "b"}
+```
+
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Server
+    User->>Server: 请求数据
+    Server-->>User: 返回数据
+```

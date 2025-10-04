@@ -1,5 +1,6 @@
 output/
 output.*
+README_with_images.md
 
 node_modules/
 .DS_Store
