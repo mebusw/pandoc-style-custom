@@ -59,7 +59,7 @@
       margin: 0 auto;
       padding-left: 50px;
       padding-right: 50px;
-      padding-top: 50px;
+      padding-top: 20px;
       padding-bottom: 50px;
       hyphens: auto;
       overflow-wrap: break-word;
@@ -90,12 +90,6 @@
         orphans: 3;
         widows: 3;
       }
-      h2, h3, h4 {
-        page-break-after: avoid;
-        margin-top: 1.5cm !important; 
-        /* 避免边距折叠导致的问题，也可以考虑添加一点点 padding */
-        padding-top: 0.1px; 
-      }
     }
 
     p {
@@ -117,22 +111,19 @@
     }
     h1, h2, h3, h4, h5, h6 {
       margin-top: 1cm;
+      border-top: 0.1px solid transparent; 
     }
     h1 {
       color: rgb(2, 31, 73);
       font-weight: bold;
     }
-    h2 {
+    h2, h3, h4 {
       color: rgb(10, 1, 84);
       font-weight: bold;
-    }
-    h3 {
-      color: rgb(10, 1, 84);
-      font-weight: bold;
-    }
-    h4 {
-      color: rgb(10, 1, 84);
-      font-weight: bold;
+      page-break-after: avoid;
+      margin-top: 1cm !important; 
+      /* 避免边距折叠导致的问题，也可以考虑添加一点点 padding */
+      padding-top: 0.1cm !important;
     }
     h5, h6 {
       font-size: 1em;
@@ -275,11 +266,11 @@
     #title-block-header {
       margin-bottom: 0;
       page-break-after: always;
-      page-
     }
     #main-content {
       background-color: #fff;
       min-height: 26cm;
+      max-height: 26cm;
       padding: 2cm;
     }
     #closing-block-footer {
