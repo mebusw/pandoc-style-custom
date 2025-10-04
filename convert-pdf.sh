@@ -9,15 +9,16 @@
 
 ## 方式二：先生成 HTML，再用 weasyprint 转 PDF
 cd output
-pandoc README_with_images.md -o output/output.html \
+pandoc README_with_images.md -o output.html \
   --css=../custom_style.css \
-  --template=custom_template.html 
+  --template=../custom_template.html 
 echo "生成完成：output.html"
-cd ..
 
-weasyprint output/output.html output/output.pdf
+
+weasyprint output.html output.pdf
 
 
 echo "转换完成：output.pdf"
-open output/output.pdf
+open output.pdf
 
+cd ..
