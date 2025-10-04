@@ -1,6 +1,7 @@
 output/
 output.*
 README_with_images.md
+diagram-*.png
 
 node_modules/
 .DS_Store

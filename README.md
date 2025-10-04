@@ -17,7 +17,7 @@ print("Hello, Pandoc!")
 
 > 这是一个引用块，将使用“引用”样式。
 
-![](./sample-client-drawing.png)
+![](../sample-client-drawing.png)
 
 ### ✅ 使用步骤（复制以上文件到同一目录）
 1. 双击 `init.bat` / 运行 `./init.sh`  (注意添加运行权限)
@@ -64,7 +64,6 @@ flowchart TD
     C --> C1("农业用水的主导地位和趋势") & C2("工业和家庭用水的增长") & C3("引用关键数据支持")
     D --> D1("巴西和刚果的水用对比") & D2("各部门用水比例及人均用水量") & D3("引用关键数据进行比较")
     n1["Sample Label"] --> n2["Untitled Node"]
-    n1@{ icon: "mc:default", pos: "b"}
 ```
 
 

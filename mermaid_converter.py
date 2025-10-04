@@ -76,7 +76,7 @@ def process_markdown_file(md_filepath: str, img_output_dir: str):
         img_full_path = os.path.join(img_output_dir, img_filename)
         
         # 相对路径，用于 Markdown 链接
-        img_relative_path = os.path.join(img_output_dir, img_filename)
+        img_relative_path = os.path.join("", img_filename)
         
         # 检查图片是否已经存在，如果存在则跳过渲染（节省 API 调用次数）
         if os.path.exists(img_full_path):
